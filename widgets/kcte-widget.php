@@ -202,7 +202,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
                                         <?php foreach ( $settings['kcte_team_socials'] as $item ) : ?>
                                             <?php if ( ! empty( $item['social'] ) ) : ?>
                                                 <?php $target = $item['link']['is_external'] ? ' target="_blank"' : ''; ?>
-                                                <li class="pr-team-member-social-link">
+                                                <li>
                                                     <a href="<?php echo esc_attr( $item['link']['url'] ); ?>"<?php echo $target; ?>><i class="<?php echo esc_attr($item['social'] ); ?>"></i></a>
                                                 </li>
                                             <?php endif; ?>

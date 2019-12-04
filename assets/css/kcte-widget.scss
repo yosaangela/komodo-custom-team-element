@@ -16,7 +16,21 @@
 }
 
 .kcte-widget {
+    max-width: 400px;
     padding: 40px;
+    margin: auto;
+    @media screen and (max-width: 767px) {
+        padding: 20px;
+    }
+
+    @media screen and (max-width: 500px) {
+        max-width: 300px;
+    }
+
+    @media screen and (max-width: 360px) {
+        max-width: 240px;
+        padding: 10px;
+    }
 
     $root-parent: #{&};
 
@@ -34,6 +48,12 @@
             right: 0;
             bottom: 0;
             left: 0;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
 
         #{$root-parent}-content {
@@ -114,7 +134,7 @@
         &-box {
             position: relative;
             width: 600px;
-            max-width: 100%;
+            max-width: calc(100% - 40px);
             padding: 40px;
             margin: auto;
             border-radius: 2px;
@@ -154,6 +174,36 @@
 
             #{$popup-root}-description {
                 margin-top: 16px;
+            }
+
+            #{$popup-root}-socials {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                margin: -4px;
+                margin-top: 20px;
+                list-style: none;
+
+                li {
+                    padding: 4px;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        width: 40px;
+                        transition: 225ms ease-in;
+                        border-radius: 50%;
+                        background-color: transparent;
+
+                        &:hover,
+                        &:focus {
+                            color: #ffffff;
+                            background-color: #e9204f;
+                        }
+                    }
+                }
             }
         }
 

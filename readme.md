@@ -1,5 +1,7 @@
 # Custom Team ELement for Komodo website
 
+This is a plugin for building custom team element based on Elementor and Gentium theme.
+
 #### Dependencies :
 
 -   jQuery >= 1.12.4

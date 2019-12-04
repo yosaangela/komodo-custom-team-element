@@ -1,0 +1,165 @@
+%name {
+    font-family: "Overpass", Sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: inherit;
+}
+
+%jobtitle {
+    font-family: "Overpass", Sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.8;
+    margin: 0;
+    color: inherit;
+}
+
+.kcte-widget {
+    padding: 40px;
+
+    $root-parent: #{&};
+
+    &-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: #adadad;
+
+        figure {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #{$root-parent}-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 275ms ease-out;
+            opacity: 0;
+            color: #ffffff;
+            background-color: rgba(233, 32, 79, 0.77);
+
+            &:hover,
+            &:focus,
+            &:focus-within {
+                opacity: 1;
+            }
+
+            #{$root-parent}-name {
+                @extend %name;
+            }
+
+            #{$root-parent}-jobtitle {
+                @extend %jobtitle;
+            }
+
+            #{$root-parent}-button {
+                margin-top: 28px;
+                padding: 6px 20px;
+                font-family: "Overpass", Sans-serif;
+                font-size: 14px;
+                transition: color 0.3s ease-in-out, background 0.3s ease-in-out !important;
+                border: 1px solid #ffffff;
+                border-radius: 2px;
+                color: #e9204f;
+                background: #ffffff;
+
+                &:hover,
+                &:focus {
+                    color: #ffffff;
+                    background: #e9204f;
+                }
+            }
+        }
+    }
+
+    &-popup {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 981;
+        pointer-events: none;
+        transition: 275ms ease;
+        opacity: 0;
+        background-color: #00000060;
+
+        $popup-root: #{&};
+
+        &-wrapper {
+            height: 100%;
+            overflow: auto;
+        }
+
+        &-box-wrapper {
+            min-height: 100%;
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        &-box {
+            position: relative;
+            width: 600px;
+            max-width: 100%;
+            padding: 40px;
+            margin: auto;
+            border-radius: 2px;
+            background: #ffffff;
+
+            #{$popup-root}-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 275ms ease;
+                border-radius: 50%;
+                border-width: 0;
+                background-color: #e9204f;
+
+                &:hover,
+                &:focus {
+                    background-color: mix(#e9204f, #000000, 70);
+                }
+
+                svg path {
+                    fill: #ffffff;
+                }
+            }
+
+            #{$popup-root}-name {
+                @extend %name;
+            }
+
+            #{$popup-root}-jobtitle {
+                @extend %jobtitle;
+            }
+
+            #{$popup-root}-description {
+                margin-top: 16px;
+            }
+        }
+
+        &.is-open {
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+}

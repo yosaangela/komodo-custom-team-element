@@ -1,0 +1,4 @@
+<?php
+/**
+ * Silince is golden
+ */

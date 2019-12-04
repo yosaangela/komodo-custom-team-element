@@ -111,11 +111,11 @@
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 981;
+        z-index: 9999;
         pointer-events: none;
         transition: 275ms ease;
         opacity: 0;
-        background-color: #00000060;
+        background-color: #000000a0;
 
         $popup-root: #{&};
 
@@ -126,19 +126,25 @@
 
         &-box-wrapper {
             min-height: 100%;
-            padding: 40px 0;
+            padding: 80px 0 40px 0;
             display: flex;
             align-items: center;
         }
 
         &-box {
             position: relative;
-            width: 600px;
+            width: 500px;
             max-width: calc(100% - 40px);
             padding: 40px;
             margin: auto;
+            text-align: center;
+            box-shadow: 0 10px 40px 0px #00000040;
             border-radius: 2px;
             background: #ffffff;
+
+            @media screen and (max-width: 420px) {
+                text-align: start;
+            }
 
             #{$popup-root}-close {
                 position: absolute;
@@ -164,8 +170,39 @@
                 }
             }
 
+            #{$popup-root}-avatar-wrapper {
+                width: 300px;
+                max-width: 100%;
+                margin: auto;
+            }
+
+            #{$popup-root}-avatar {
+                position: relative;
+                width: 100%;
+                margin-top: 34px;
+                padding-bottom: 100%;
+                overflow: hidden;
+                border-radius: 50%;
+                background-color: #adadad;
+
+                figure {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
             #{$popup-root}-name {
                 @extend %name;
+                margin-top: 20px;
             }
 
             #{$popup-root}-jobtitle {
@@ -179,10 +216,15 @@
             #{$popup-root}-socials {
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: center;
                 padding: 0;
                 margin: -4px;
                 margin-top: 20px;
                 list-style: none;
+
+                @media screen and (max-width: 420px) {
+                    justify-content: flex-start;
+                }
 
                 li {
                     padding: 4px;

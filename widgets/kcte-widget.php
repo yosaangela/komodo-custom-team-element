@@ -193,6 +193,13 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
                                         <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                                     </svg>
                                 </button>
+                                <div class="kcte-widget-popup-avatar-wrapper">
+                                    <div class="kcte-widget-popup-avatar">
+                                        <figure>
+                                            <img src="<?php echo $settings['kcte_team_avatar']['url']; ?>" alt="<?php echo $settings['kcte_team_name'];?>">
+                                        </figure>
+                                    </div>
+                                </div>
                                 <h3 class="kcte-widget-popup-name"><?php echo $settings["kcte_team_name"]; ?></h3>
                                 <h4 class="kcte-widget-popup-jobtitle"><?php echo $settings["kcte_team_jobtitle"]; ?></h4>
                                 <div class="kcte-widget-popup-description"><?php echo $settings["kcte_team_description"]; ?></div>

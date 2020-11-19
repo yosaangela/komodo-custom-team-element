@@ -180,7 +180,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
                     <div class="kcte-widget-content">
                         <h3 class="kcte-widget-name"><?php echo $settings["kcte_team_name"]; ?></h3>
                         <h4 class="kcte-widget-jobtitle"><?php echo $settings["kcte_team_jobtitle"]; ?></h4>
-                        <button class="kcte-widget-button">See Detail</button>
+                        <button class="kcte-widget-button">Read more</button>
                     </div>
                 </div>
                 <div class="kcte-widget-popup">
